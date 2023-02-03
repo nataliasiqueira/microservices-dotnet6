@@ -18,7 +18,6 @@ namespace GeekShopping.ProductAPI.Controllers
                 ArgumentNullException(nameof(repository));
         }
 
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductVO>>> FindAll()
         {
@@ -31,7 +30,7 @@ namespace GeekShopping.ProductAPI.Controllers
         public async Task<ActionResult<ProductVO>> FindById(long id)
         {
             var product = await _repository.FindById(id);
-            if(product.Id <= 0) return NotFound();
+            if(product == null) return NotFound();
             return Ok(product);
         }
 

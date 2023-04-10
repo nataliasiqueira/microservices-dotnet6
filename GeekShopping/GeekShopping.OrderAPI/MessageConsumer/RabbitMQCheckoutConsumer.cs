@@ -99,7 +99,7 @@ namespace GeekShopping.OrderAPI.MessageConsumer
             }
             catch (Exception)
             {
-                //LOG
+                //Log
                 throw;
             }
         }

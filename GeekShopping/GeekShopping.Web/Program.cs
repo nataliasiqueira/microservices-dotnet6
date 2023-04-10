@@ -19,8 +19,7 @@ builder.Services.AddHttpClient<ICouponService, CouponService>(
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication(options =>
-{
+builder.Services.AddAuthentication(options => {
     options.DefaultScheme = "Cookies";
     options.DefaultChallengeScheme = "oidc";
 })
